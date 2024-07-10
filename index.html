@@ -121,6 +121,7 @@
             <td width="60%" valign="middle">
               <heading>News</heading>
               <ul>
+                <li> <b>2024-06</b> Started internship at <a href="https://ai.meta.com/research/"> the Fundamental AI Research (FAIR) team at Meta </a>! </li>
                 <li> <b>2023-10</b> Gave a talk at AWS on Long-context LLMs! <a href="https://drive.google.com/file/d/1d2St0r72ksgwLfTmc78uhXGq_JJR9l2e/view?usp=sharing"> [slides] </a> </li>
                 <li> <b>2023-10</b> Gave a talk at SAMPL Lab on scaling up retrieval-based language models! </li>
                 <li> <b>2023-10</b> Introducing <a href="https://arxiv.org/abs/2310.03294v1"> LightSeq </a>, a better sequence parallelism solution for long-context LLM training! It is highly optimized for decoders, and it does not entangle with the model architecture, allowing you to scale up your sequence length without an upper bound! </li>
@@ -145,6 +146,22 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
 
           <!-- Projects -->
+
+          <tr>
+            <td width="25%" id="dclm-img"></td>
+            <td valign="top" width="75%" id="dclm-txt"></td>
+          </tr>
+          <script type="text/javascript">
+            createProjectElement(
+              id = "dclm", {
+              title: "DataComp-LM: In search of the next generation of training sets for language models",
+              paper_url: "https://arxiv.org/abs/2403.08540",
+              authors: "Jeffrey Li, Alex Fang, Georgios Smyrnis, Maor Ivgi, Matt Jordan, Samir Gadre, Hritik Bansal, Etash Guha, Sedrick Keh, Kushal Arora, Saurabh Garg, Rui Xin, Niklas Muenninghoff, Reinhard Heckel, Jean Mercat, Mayee Chen, Suchin Gururangan, Mitchell Wortsman, Alon Albalak, Yonatan Bitton, Marianna Nezhurina, Amro Abbas, Cheng-Yu Hsieh, Dhruba Ghosh, Josh Gardner, Maciej Kilian, Hanlin Zhang, <b> Rulin Shao </b>, Sarah Pratt, Sunny Sanyal, Gabriel Ilharco, Giannis Daras, Kalyani Marathe, Aaron Gokaslan, Jieyu Zhang, Khyathi Chandu, Thao Nguyen, Igor Vasiljevic, Sham Kakade, Shuran Song, Sujay Sanghavi, Fartash Faghri, Sewoong Oh, Luke Zettlemoyer, Kyle Lo, Alaaeldin El-Nouby, Hadi Pouransari, Alexander Toshev, Stephanie Wang, Dirk Groeneveld, Luca Soldani, Pang Wei Koh, Jenia Jitsev, Thomas Kollar, Alexandros G Dimakis, Yair Carmon, Achal Dave, Ludwig Schmidt, Vaishaal Shankar",
+              conference: "Preprint",
+              image: "figures/dclm.png",
+              others: null
+            });
+          </script>
 
           <tr>
             <td width="25%" id="lm_scale-img"></td>
@@ -204,7 +221,7 @@
               title: "LightSeq: Sequence Level Parallelism for Distributed Training of Long Context Transformers",
               paper_url: "https://arxiv.org/abs/2310.03294v1",
               authors: "Dacheng Li*, <b> Rulin Shao* </b>, Anze Xie, Eric P. Xing, Joseph E. Gonzalez, Ion Stoica, Xuezhe Ma, Hao Zhang",
-              conference: "Preprint",
+              conference: "COLM 2024",
               image: "figures/lightseq.gif",
               others: null
             });
