@@ -121,8 +121,10 @@
             <td width="60%" valign="middle">
               <heading>News</heading>
               <ul>
+                <li> <b>2024-12</b> Introducing Explicit Working Memory (EWE) for long-form factual generation! We augment the LLM with a dynamic KV-cache working memory that receives real-time feedback from external resources. </li>
+                <li> <b>2024-11</b> Introducing a joint work by UW and AI2, <a href="https://openscilm.allen.ai/"> OpenScholar </a>, an AI assistant that is good at answering research questions with accurate inline paper citations using semantic scholar online resources! </li>
                 <li> <b>2024-09</b> Joined Meta as a visiting researcher! </li>
-                <li> <b>2024-07</b> Introducing <a href="https://retrievalscaling.github.io/"> MassiveDS </a>, a 1.4T-token open-source datastore, and a scaling study for retrieval-based language models! We show scaling data used at test time brings better compute-optimal scaling curves.</li>
+                <li> <b>2024-07</b> Introducing <a href="https://retrievalscaling.github.io/"> MassiveDS </a>, the first open-source trillion-token datastore and datastore scaling study! We release codes for distributed indexing and API serving make datastore scaling study accessible. [<a href="https://github.com/RulinShao/retrieval-scaling">code</a>]</li>
                 <li> <b>2024-06</b> Started internship at <a href="https://ai.meta.com/research/"> Meta FAIR</a>! </li>
                 <li> <b>2023-10</b> Gave a talk at AWS on Long-context LLMs! <a href="https://drive.google.com/file/d/1d2St0r72ksgwLfTmc78uhXGq_JJR9l2e/view?usp=sharing"> [slides] </a> </li>
                 <li> <b>2023-10</b> Gave a talk at SAMPL Lab on scaling up retrieval-based language models! </li>
@@ -148,7 +150,38 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
 
           <!-- Projects -->
-
+          <tr>
+            <td width="25%" id="ewe-img"></td>
+            <td valign="top" width="75%" id="ewe-txt"></td>
+          </tr>
+          <script type="text/javascript">
+            createProjectElement(
+              id = "ewe", {
+              title: "Improving Factuality with Explicit Working Memory",
+              paper_url: "https://arxiv.org/abs/2412.18069",
+              authors: "Mingda Chen, Yang Li, Karthik Padthe, <b>Rulin Shao</b>, Alicia Sun, Luke Zettlemoyer, Gargi Gosh, Wen-tau Yih",
+              conference: "Preprint",
+              image: "figures/ewe.png",
+              others: null
+            });
+          </script>
+          
+          <tr>
+            <td width="25%" id="openscholar-img"></td>
+            <td valign="top" width="75%" id="openscholar-txt"></td>
+          </tr>
+          <script type="text/javascript">
+            createProjectElement(
+              id = "openscholar", {
+              title: "Openscholar: Synthesizing scientific literature with retrieval-augmented lms",
+              paper_url: "https://arxiv.org/abs/2411.14199",
+              authors: "Akari Asai, Jacqueline He*, <b>Rulin Shao*</b>, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'arcy, David Wadden, Matt Latzke, Minyang Tian, Pan Ji, Shengyan Liu, Hao Tong, Bohao Wu, Yanyu Xiong, Luke Zettlemoyer, Graham Neubig, Dan Weld, Doug Downey, Wen-tau Yih, Pang Wei Koh, Hannaneh Hajishirzi",
+              conference: "Preprint",
+              image: "figures/openscholar.png",
+              others: null
+            });
+          </script>
+          
           <tr>
             <td width="25%" id="massiveds-img"></td>
             <td valign="top" width="75%" id="massiveds-txt"></td>
