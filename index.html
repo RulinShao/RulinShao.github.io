@@ -121,19 +121,11 @@
             <td width="60%" valign="middle">
               <heading>News</heading>
               <ul>
-                <li> <b>2025-02</b> Introducing <a href="https://arxiv.org/abs/2502.20969"> TeleRAG</a>, a lookahead retrieval method for efficient RAG inference! <a href="https://www.amazon.science/publications/longleader-a-comprehensive-leaderboard-for-large-language-models-in-long-context-scenarios"> LongLeader</a>, a comprehensive benchmark for long-context models, was accepted by ACL 2025! </li>
-                <li> <b>2024-12</b> Introducing <a href="https://arxiv.org/abs/2412.18069"> Explicit Working Memory (EWE)</a> for long-form factual generation! We augment the LLM with a dynamic KV-cache working memory that receives real-time feedback from external resources. Introducing <a href="https://arxiv.org/abs/2501.00654"> ICONS</a> for multimodal data selection! </li>
-                <li> <b>2024-11</b> Introducing <a href="https://openscilm.allen.ai/"> OpenScholar </a>, an AI assistant proficient at answering research questions with accurate paper citations using online paper resources! Try out our <a href="https://openscilm.allen.ai/"> demo</a>! </li>
-                <li> <b>2024-10</b> Introducing <a href="https://arxiv.org/abs/2410.08876"> RoRA-VLM</a>, a multimodal retrieval-augmented vision-language model. </li>
-                <li> <b>2024-09</b> Joined Meta as a visiting researcher! </li>
-                <li> <b>2024-07</b> Introducing <a href="https://retrievalscaling.github.io/"> MassiveDS </a>, the first open-source trillion-token datastore and datastore scaling study! We release codes for distributed indexing and API serving make datastore scaling study accessible. [<a href="https://github.com/RulinShao/retrieval-scaling">code</a>]</li>
-                <li> <b>2024-06</b> Started internship at <a href="https://ai.meta.com/research/"> Meta FAIR</a>! </li>
-                <li> <b>2023-10</b> Gave a talk at AWS on Long-context LLMs! <a href="https://drive.google.com/file/d/1d2St0r72ksgwLfTmc78uhXGq_JJR9l2e/view?usp=sharing"> [slides] </a> </li>
-                <li> <b>2023-10</b> Gave a talk at SAMPL Lab on scaling up retrieval-based language models! </li>
-                <li> <b>2023-10</b> Introducing <a href="https://arxiv.org/abs/2310.03294v1"> LightSeq </a>, a better sequence parallelism solution for long-context LLM training! It is highly optimized for decoders, and it does not entangle with the model architecture, allowing you to scale up your sequence length without an upper bound! </li>
-                <li> <b>2023-09</b> Started PhD at University of Washington!
-                <li> <b>2023-06</b> Introducing our latest work on the long-context models (LongChat) and benchmark (LongEval) in this <a href="https://lmsys.org/blog/2023-06-29-longchat/"> LMSys blog </a>! Stay tuned! </li>
-                <li> <b>2023-01</b> Joined AWS as a full-time Applied Scientist working on language model pretraining! </li>
+                <li> <b>2025-05</b> Introducing <a href="https://rethink-rlvr.notion.site/Spurious-Rewards-Rethinking-Training-Signals-in-RLVR-1f4df34dac1880948858f95aeb88872f"> Spurious Rewards: Rethinking Training Signals in RLVR </a>. We showed Qwen models can work even with random rewards! 🤯 </li>
+                <li> <b>2025-04</b> Introducing <a href="https://arxiv.org/abs/2504.20595"> ReasonIR </a>, a retriever specifically trained for reasoning tasks. Code, data, and model are released! </li>
+                <li> <b>2024-11</b> Check out our <a href="https://openscilm.allen.ai/"> OpenScholar </a>, an AI assistant proficient at answering research questions with accurate paper citations using online paper resources! Try out our <a href="https://openscilm.allen.ai/"> demo</a>! </li>
+                <li> <b>2024-07</b> Introducing <a href="https://retrievalscaling.github.io/"> MassiveDS-1.4T </a>, the first open-source trillion-token datastore and datastore scaling study! We release codes for distributed indexing and API serving make datastore scaling study accessible. [<a href="https://github.com/RulinShao/retrieval-scaling">code</a>]</li>
+                <li> <b>2023-10</b> Introducing <a href="https://arxiv.org/abs/2310.03294v2"> DistFlashAtten </a>, an efficient implementation of distributed memory-efficient attention with sequence parallelism for Long-context LLMs training! </li>
               </ul>
             </td>
           </tr>
@@ -152,6 +144,23 @@
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
 
           <!-- Projects -->
+          <tr>
+            <td width="25%" id="reasonir-img"></td>
+            <td valign="top" width="75%" id="reasonir-txt"></td>
+          </tr>
+          <script type="text/javascript">
+            createProjectElement(
+              id = "reasonir", {
+              title: "ReasonIR: Training Retrievers for Reasoning Tasks",
+              paper_url: "https://arxiv.org/abs/2504.20595",
+              authors: "<b>Rulin Shao</b>, Rui Qiao, Varsha Kishore, Niklas Muennighoff, Xi Victoria Lin, Daniela Rus, Bryan Kian Hsiang Low, Sewon Min, Wen-tau Yih, Pang Wei Koh, Luke Zettlemoyer",
+              conference: "Preprint",
+              image: "figures/reasonir.png",
+              others: null
+            });
+          </script>
+
+          
           <tr>
             <td width="25%" id="ewe-img"></td>
             <td valign="top" width="75%" id="ewe-txt"></td>
