@@ -121,6 +121,7 @@
             <td width="60%" valign="middle">
               <heading>News</heading>
               <ul>
+                <li> <b>2025-10</b> Introducing <a href="https://github.com/rlresearch/dr-tulu"> DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research </a>. Our 8B model matches OpenAI Deep Research thanks to our RLER algorithm! </li>
                 <li> <b>2025-10</b> Honored to receive the <a href="https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program?utm_campaign=ai-phd-fellowship&utm_medium=organic-asw&utm_source=twitter&utm_content=2025-10-21-ai-phd-fellowship&utm_term=2025-october"> Amazon AI PhD Fellowship </a>! </li>
                 <li> <b>2025-10</b> Gave an <a href="https://www.csail.mit.edu/event/rethinking-training-signals-rlvr"> invited talk at MIT NLP Seminar </a> </li>
                 <li> <b>2025-05</b> Introducing <a href="https://arxiv.org/abs/2506.10947"> Spurious Rewards: Rethinking Training Signals in RLVR </a>. We showed Qwen models can work even with random rewards! 🤯 </li>
@@ -147,17 +148,17 @@
 
           <!-- Projects -->
           <tr>
-            <td width="25%" id="compactds-img"></td>
-            <td valign="top" width="75%" id="compactds-txt"></td>
+            <td width="25%" id="drtulu-img"></td>
+            <td valign="top" width="75%" id="drtulu-txt"></td>
           </tr>
           <script type="text/javascript">
             createProjectElement(
-              id = "compactds", {
-              title: "Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks",
-              paper_url: "https://arxiv.org/abs/2507.01297",
-              authors: "Xinxi Lyu*, Michael Duan*, <b>Rulin Shao</b>, Pang Wei Koh, Sewon Min",
+              id = "drtulu", {
+              title: "DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research",
+              paper_url: "https://allenai.org/papers/drtulu",
+              authors: "<b>Rulin Shao*</b>, Akari Asai*, Shannon Zejiang Shen*, Hamish Ivison*, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, and Pang Wei Koh",
               conference: "Preprint",
-              image: "figures/compactds.png",
+              image: "figures/drtulu.png",
               others: null
             });
           </script>
@@ -195,23 +196,6 @@
               others: null
             });
           </script>
-
-          
-          <tr>
-            <td width="25%" id="ewe-img"></td>
-            <td valign="top" width="75%" id="ewe-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "ewe", {
-              title: "Improving Factuality with Explicit Working Memory",
-              paper_url: "https://arxiv.org/abs/2412.18069",
-              authors: "Mingda Chen, Yang Li, Karthik Padthe, <b>Rulin Shao</b>, Alicia Sun, Luke Zettlemoyer, Gargi Gosh, Wen-tau Yih",
-              conference: "ACL 2025",
-              image: "figures/ewe.png",
-              others: null
-            });
-          </script>
           
           <tr>
             <td width="25%" id="openscholar-img"></td>
@@ -223,7 +207,7 @@
               title: "Openscholar: Synthesizing scientific literature with retrieval-augmented lms",
               paper_url: "https://arxiv.org/abs/2411.14199",
               authors: "Akari Asai, Jacqueline He*, <b>Rulin Shao*</b>, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'arcy, David Wadden, Matt Latzke, Minyang Tian, Pan Ji, Shengyan Liu, Hao Tong, Bohao Wu, Yanyu Xiong, Luke Zettlemoyer, Graham Neubig, Dan Weld, Doug Downey, Wen-tau Yih, Pang Wei Koh, Hannaneh Hajishirzi",
-              conference: "Nature",
+              conference: "Nature (to appear)",
               image: "figures/openscholar.png",
               others: null
             });
@@ -260,54 +244,6 @@
               others: null
             });
           </script>
-
-          <tr>
-            <td width="25%" id="lm_scale-img"></td>
-            <td valign="top" width="75%" id="lm_scale-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "lm_scale", {
-              title: "Language models scale reliably with over-training and on downstream tasks",
-              paper_url: "https://arxiv.org/abs/2403.08540",
-              authors: "Samir Yitzhak Gadre, Georgios Smyrnis, Vaishaal Shankar, Suchin Gururangan, Mitchell Wortsman, <b>Rulin Shao</b>, Jean Mercat, Alex Fang, Jeffrey Li, Sedrick Keh, Rui Xin, Marianna Nezhurina, Igor Vasiljevic, Jenia Jitsev, Alexandros G. Dimakis, Gabriel Ilharco, Shuran Song, Thomas Kollar, Yair Carmon, Achal Dave, Reinhard Heckel, Niklas Muennighoff, Ludwig Schmidt",
-              conference: "ICLR 2025",
-              image: "figures/lm_scale.png",
-              others: null
-            });
-          </script>
-          
-          <tr>
-            <td width="25%" id="vision_flan-img"></td>
-            <td valign="top" width="75%" id="vision_flan-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "vision_flan", {
-              title: "Vision-Flan: Scaling Human-Labeled Tasks in Visual Instruction Tuning",
-              paper_url: "https://arxiv.org/abs/2402.11690",
-              authors: "Zhiyang Xu, Chao Feng, <b>Rulin Shao</b>, Trevor Ashby, Ying Shen, Di Jin, Yu Cheng, Qifan Wang, Lifu Huang",
-              conference: "ACL 2024 Findings",
-              image: "figures/vision_flan.png",
-              others: null
-            });
-          </script>
-
-          <tr>
-            <td width="25%" id="multidomain-img"></td>
-            <td valign="top" width="75%" id="multidomain-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "multidomain", {
-              title: "Retrieval-based Language Models Using a Multi-domain Datastore",
-              paper_url: "https://openreview.net/pdf?id=5ck1WQ4yW4",
-              authors: "<b>Rulin Shao</b>, Sewon Min, Luke Zettlemoyer, Pang Wei Koh",
-              conference: "Workshop on Distribution Shifts at NeurIPS 2023",
-              image: "figures/multidomain.png",
-              others: null
-            });
-          </script>
           
           <tr>
             <td width="25%" id="lightseq-img"></td>
@@ -324,22 +260,7 @@
               others: null
             });
           </script>
-          
-          <tr>
-            <td width="25%" id="visit-bench-img"></td>
-            <td valign="top" width="75%" id="visit-bench-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "visit-bench", {
-              title: "VisIT-Bench: A Benchmark for Vision-Language Instruction Following Inspired by Real-World Use",
-              paper_url: "https://arxiv.org/abs/2308.06595",
-              authors: "Yonatan Bitton*, Hritik Bansal*, Jack Hessel*, <b>Rulin Shao</b>, Wanrong Zhu, Anas Awadalla, Josh Gardner, Rohan Taori, Ludwig Schimdt",
-              conference: "NeurIPS 2023 Datasets and Benchmarks track",
-              image: "figures/visit-bench.PNG",
-              others: null
-            });
-          </script>
+
 
           <tr>
             <td width="25%" id="longchat-img"></td>
@@ -357,22 +278,7 @@
             });
           </script>
 
-          <tr>
-            <td width="25%" id="cacr_acl23-img"></td>
-            <td valign="top" width="75%" id="cacr_acl23-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "cacr_acl23", {
-              title: "Cross-modal Attention Congruence Regularization for Vision-Language Relation Alignment",
-              paper_url: "https://arxiv.org/abs/2212.10549",
-              authors: "Rohan Pandey, <b>Rulin Shao</b>, Paul Pu Liang, Ruslan Salakhutdinov, Louis-Philippe Morency",
-              conference: "ACL 2023",
-              image: "figures/acl_23.PNG",
-              others: null
-            });
-          </script>
-
+          
           <tr>
             <td width="25%" id="mpc_iclr23-img"></td>
             <td valign="top" width="75%" id="mpc_iclr23-txt"></td>
@@ -405,53 +311,6 @@
             });
           </script>
 
-          <tr>
-            <td width="25%" id="captcha_bigdata-img"></td>
-            <td valign="top" width="75%" id="captcha_bigdata-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "captcha_bigdata", {
-              title: "Robust text captchas using adversarial examples",
-              paper_url: "https://ieeexplore.ieee.org/abstract/document/10021100",
-              authors: "<b>Rulin Shao</b>, Zhouxing Shi, Jinfeng Yi, Pin-Yu Chen, Cho-Jui Hsieh",
-              conference: "2022 IEEE International Conference on Big Data (Big Data)",
-              image: "figures/bigdata_23.PNG",
-              others: null
-            });
-          </script>
-
-          <tr>
-            <td width="25%" id="distill_arow-img"></td>
-            <td valign="top" width="75%" id="distill_arow-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "distill_arow", {
-              title: "How and When Adversarial Robustness Transfers in Knowledge Distillation?",
-              paper_url: "https://arxiv.org/abs/2110.12072",
-              authors: "<b>Rulin Shao</b>, Jinfeng Yi, Pin-Yu Chen, Cho-Jui Hsieh",
-              conference: "ARoW in European Conference on Computer Vision (ECCV 2022)",
-              image: "figures/arow_23.PNG",
-              others: null
-            });
-          </script>
-
-          <tr>
-            <td width="25%" id="fl_jmir-img"></td>
-            <td valign="top" width="75%" id="fl_jmir-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "fl_jmir", {
-              title: "Stochastic Channel-Based Federated Learning With Neural Network Pruning for Medical Data Privacy Preservation: Model Development and Experimental Validation",
-              paper_url: "https://formative.jmir.org/2020/12/e17265/",
-              authors: "<b>Rulin Shao</b>, Hongyu He, Ziwei Chen, Hui Liu, Dianbo Liu",
-              conference: "Journal of Medical Internet Research (JMIR) Form Res 2020;4(12):e17265, DOI: 10.2196/17265, PMID:33350391",
-              image: "figures/jmir_23.PNG",
-              others: null
-            });
-          </script>
           
           
           <!-- Awards -->
