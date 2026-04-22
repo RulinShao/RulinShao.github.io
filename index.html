@@ -1,374 +1,597 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-  <meta name=viewport content=“width=800”>
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-    /* Template from Han Guo */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rulin Shao</title>
+  <meta name="description" content="Rulin Shao – PhD Student at University of Washington. Research in LLMs, retrieval, reasoning, and distributed training.">
+  <meta property="og:title" content="Rulin Shao">
+  <meta property="og:description" content="PhD Student at University of Washington">
+  <meta property="og:image" content="figures/selfie3.PNG">
+  <link rel="icon" type="image/png" href="seal_icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    a {
-      color: #1772d0;
-      text-decoration: none;
+    :root {
+      --bg: #faf9f6;
+      --bg-card: #ffffff;
+      --bg-card-hover: #fefefe;
+      --border: rgba(0, 0, 0, 0.07);
+      --border-hover: rgba(67, 97, 238, 0.3);
+      --text: #1a1a2e;
+      --text-secondary: #4a4a5e;
+      --text-muted: #8b8b9e;
+      --accent: #4361ee;
+      --accent-hover: #3a0ca3;
+      --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow: 0 4px 20px rgba(0,0,0,0.05);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.08);
+      --max-w: 880px;
+      --nav-h: 56px;
     }
 
-    a:focus,
-    a:hover {
-      color: #f09228;
-      text-decoration: none;
+    [data-theme="dark"] {
+      --bg: #0f0f17;
+      --bg-card: #18182a;
+      --bg-card-hover: #1e1e34;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(99, 102, 241, 0.4);
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #818cf8;
+      --accent-hover: #a5b4fc;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+      --shadow: 0 4px 20px rgba(0,0,0,0.3);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.4);
     }
 
-    body,
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15.5px;
+      transition: background 0.4s ease, color 0.3s ease;
     }
 
-    strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-    }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-hover); }
 
-    heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 22px;
+    /* ===== Nav ===== */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--nav-h);
+      background: rgba(250, 249, 246, 0.85);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
     }
-
-    papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 700
+    [data-theme="dark"] .nav { background: rgba(15, 15, 23, 0.8); }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
     }
-
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 35px;
+    .nav-logo {
+      font-family: var(--font-serif); font-weight: 600; font-size: 18px;
+      color: var(--text); letter-spacing: -0.02em;
     }
+    .nav-logo:hover { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500; color: var(--text-muted);
+      letter-spacing: 0.01em; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    #theme-toggle {
+      background: none; border: 1px solid var(--border);
+      border-radius: 50%; width: 34px; height: 34px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 16px; transition: all 0.2s;
+    }
+    #theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
-    .one {
-      width: 160px;
-      height: 160px;
+    /* ===== Hero ===== */
+    .hero {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 72px 24px 56px;
+    }
+    .hero-inner { display: flex; align-items: center; gap: 56px; }
+    .hero-text { flex: 1; }
+    .hero-text h1 {
+      font-family: var(--font-serif);
+      font-size: 46px; font-weight: 700; line-height: 1.15;
+      color: var(--text); letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .hero-text .tagline {
+      font-family: var(--font-mono); font-size: 13.5px;
+      color: var(--text-muted); margin-bottom: 22px; letter-spacing: -0.01em;
+    }
+    .hero-text .bio {
+      color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 28px;
+    }
+    .hero-text .bio a {
+      color: var(--text);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(67, 97, 238, 0.3);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+      transition: text-decoration-color 0.2s, color 0.2s;
+    }
+    .hero-text .bio a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+    .social-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px;
+      border: 1px solid var(--border); border-radius: 100px;
+      font-family: var(--font-mono); font-size: 12.5px; font-weight: 500;
+      color: var(--text-muted); transition: all 0.25s;
+    }
+    .social-link svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+    .social-link:hover {
+      color: var(--accent); border-color: var(--accent);
+      background: rgba(67, 97, 238, 0.04); transform: translateY(-1px);
+    }
+    [data-theme="dark"] .social-link:hover { background: rgba(129, 140, 248, 0.08); }
+
+    .hero-photo {
+      flex-shrink: 0; width: 240px; height: 240px;
+      border-radius: var(--radius); overflow: hidden;
+      border: 3px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .hero-photo:hover { border-color: rgba(67, 97, 238, 0.25); box-shadow: var(--shadow-hover); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ===== Sections ===== */
+    .section {
+      max-width: var(--max-w); margin: 0 auto; padding: 48px 24px;
+      scroll-margin-top: calc(var(--nav-h) + 16px);
+    }
+    .section-title {
+      font-family: var(--font-serif); font-size: 26px; font-weight: 600;
+      margin-bottom: 32px; display: flex; align-items: center; gap: 10px;
+      letter-spacing: -0.01em;
+    }
+    .section-title .hash {
+      font-family: var(--font-mono); color: var(--text-muted);
+      font-weight: 400; font-size: 18px; opacity: 0.5;
+    }
+    .divider { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .divider hr { border: none; height: 1px; background: var(--border); }
+
+    /* ===== News ===== */
+    .news-list {
+      display: flex; flex-direction: column;
+      max-height: 320px; overflow-y: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 6px 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .news-list::-webkit-scrollbar { width: 5px; }
+    .news-list::-webkit-scrollbar-track { background: transparent; }
+    .news-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .news-list::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+    .news-fade {
       position: relative;
     }
+    .news-fade::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 48px; pointer-events: none; border-radius: 0 0 var(--radius) var(--radius);
+      background: linear-gradient(to bottom, transparent, var(--bg));
+    }
+    .news-item {
+      display: flex; align-items: baseline; gap: 20px;
+      padding: 10px 14px; border-radius: var(--radius-sm); transition: background 0.2s;
+    }
+    .news-item:hover { background: rgba(0,0,0,0.015); }
+    [data-theme="dark"] .news-item:hover { background: rgba(255,255,255,0.02); }
+    .news-date {
+      font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted);
+      white-space: nowrap; min-width: 64px;
+    }
+    .news-text { color: var(--text-secondary); font-size: 14.5px; line-height: 1.65; }
+    .news-text a {
+      text-decoration: underline; text-decoration-color: rgba(67,97,238,0.25);
+      text-underline-offset: 2px; text-decoration-thickness: 1px;
+      color: var(--text);
+    }
+    .news-text a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
-    .two {
-      width: 160px;
-      height: 160px;
-      position: absolute;
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
+    /* ===== Publication Cards ===== */
+    .pub-list { display: flex; flex-direction: column; gap: 14px; }
+    .pub-card {
+      display: flex; gap: 22px; padding: 22px;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      background: var(--bg-card); transition: all 0.3s ease;
+    }
+    .pub-card:hover {
+      border-color: var(--border-hover); background: var(--bg-card-hover);
+      transform: translateY(-2px); box-shadow: var(--shadow-hover);
+    }
+    .pub-image {
+      width: 170px; min-width: 170px; height: 110px;
+      border-radius: var(--radius-sm); overflow: hidden;
+      background: var(--bg); display: flex; align-items: center; justify-content: center;
+    }
+    .pub-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .pub-card:hover .pub-image img { transform: scale(1.04); }
+    .pub-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .pub-title {
+      font-weight: 600; font-size: 15px; line-height: 1.5;
+      color: var(--text); transition: color 0.2s;
+    }
+    .pub-title:hover { color: var(--accent); }
+    .pub-authors { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .pub-authors strong { color: var(--text); font-weight: 600; }
+    .pub-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+    .venue-badge {
+      display: inline-block; padding: 2px 10px; border-radius: 100px;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.02em;
+    }
+    .venue-nature   { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+    .venue-neurips  { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+    .venue-iclr     { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+    .venue-colm     { background: #f0fdfa; color: #0d9488; border: 1px solid #99f6e4; }
+    .venue-preprint { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+    .venue-blog     { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    .venue-tmlr     { background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; }
+    .venue-award    { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+
+    [data-theme="dark"] .venue-nature   { background: rgba(5,150,105,0.1); color: #6ee7b7; border-color: rgba(5,150,105,0.25); }
+    [data-theme="dark"] .venue-neurips  { background: rgba(37,99,235,0.1); color: #93c5fd; border-color: rgba(37,99,235,0.25); }
+    [data-theme="dark"] .venue-iclr     { background: rgba(124,58,237,0.1); color: #c4b5fd; border-color: rgba(124,58,237,0.25); }
+    [data-theme="dark"] .venue-colm     { background: rgba(13,148,136,0.1); color: #5eead4; border-color: rgba(13,148,136,0.25); }
+    [data-theme="dark"] .venue-preprint { background: rgba(100,116,139,0.1); color: #94a3b8; border-color: rgba(100,116,139,0.2); }
+    [data-theme="dark"] .venue-blog     { background: rgba(217,119,6,0.1); color: #fcd34d; border-color: rgba(217,119,6,0.25); }
+    [data-theme="dark"] .venue-tmlr     { background: rgba(79,70,229,0.1); color: #a5b4fc; border-color: rgba(79,70,229,0.25); }
+    [data-theme="dark"] .venue-award    { background: rgba(180,83,9,0.1); color: #fcd34d; border-color: rgba(180,83,9,0.25); }
+
+    /* ===== Footer ===== */
+    footer {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 40px 24px 80px; text-align: center;
+    }
+    footer p { font-size: 13px; color: var(--text-muted); }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent); }
+
+    /* ===== Pixel Umaru ===== */
+    #kirby-wrap {
+      position: fixed; bottom: 24px; right: 28px; z-index: 90;
+      cursor: pointer; user-select: none; -webkit-user-select: none;
+    }
+    #kirby-inner {
+      animation: umaru-float 2.8s ease-in-out infinite;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    #kirby-bubble {
+      background: var(--bg-card); color: var(--text-secondary);
+      font-family: var(--font-mono); font-size: 11px;
+      padding: 4px 10px; border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 6px;
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none; white-space: nowrap;
+    }
+    #kirby-bubble.show { opacity: 1; transform: translateY(0); }
+    #kirby-canvas {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    #kirby-shadow {
+      width: 60px; height: 8px; margin-top: 3px;
+      background: radial-gradient(ellipse, rgba(0,0,0,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: umaru-shadow 2.8s ease-in-out infinite;
+    }
+    @keyframes umaru-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes umaru-shadow {
+      0%, 100% { transform: scaleX(1); opacity: 1; }
+      50% { transform: scaleX(0.8); opacity: 0.6; }
     }
 
-    .fade {
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
+    /* ===== Scroll Animations ===== */
+    .anim {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
+    .anim.visible { opacity: 1; transform: translateY(0); }
 
-    span.highlight {
-      background-color: #ffffd0;
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 44px 20px 36px; }
+      .hero-inner { flex-direction: column-reverse; gap: 32px; text-align: center; }
+      .hero-text h1 { font-size: 34px; }
+      .hero-photo { width: 190px; height: 190px; }
+      .social-links { justify-content: center; }
+      .section { padding: 32px 20px; }
+      .section-title { font-size: 22px; margin-bottom: 24px; }
+      .pub-card { flex-direction: column; gap: 14px; padding: 16px; }
+      .pub-image { width: 100%; min-width: unset; height: 150px; }
+      .news-item { flex-direction: column; gap: 2px; padding: 8px 10px; }
+      .news-date { min-width: unset; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+      #umaru-wrap { bottom: 16px; right: 16px; }
+    }
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 28px; }
+      .hero-photo { width: 160px; height: 160px; }
+      .social-link { padding: 6px 11px; font-size: 11.5px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .anim { opacity: 1; transform: none; transition: none; }
+      #umaru-inner { animation: none; }
+      #umaru-shadow { animation: none; }
     }
   </style>
-  <link rel="icon" type="image/png" href="seal_icon.png">
-  <title>Rulin Shao</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <script src="./utils.js"></script>
 </head>
-
 <body>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="67%" valign="middle">
-              <p align="center">
-                <name>Rulin Shao</name>
-              </p>
-              <p>
-                I am a third-year PhD at University of Washington advised by Prof. <a href="https://koh.pw/"> Pang Wei Koh </a> and Prof. <a href="https://www.cs.washington.edu/people/faculty/lsz"> Luke Zettlemoyer </a>. 
-                I am also a visiting researcher at Meta working with <a href="https://scottyih.org/"> Scott Yih </a> and <a href="https://scholar.google.co.uk/citations?user=SnQnQicAAAAJ&hl=en"> Mike Lewis </a>.
-                I completed my master's in Machine Learning at CMU advised by Prof. <a href="http://www.cs.cmu.edu/~epxing/"> Eric Xing </a> and my undergraduate degree in Mathematics at XJTU.
-                <br>
-                <br>
-                I'm interested in building an AI system that can automatically collect information from diverse sources, conduct deliberate practice, and decide how to spend time, compute, and storage to handle complex tasks.
-              </p>
-              <p align=center>
-                <a href="https://scholar.google.com/citations?user=Vdwh6bcAAAAJ&hl=en&oi=ao">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/RulinShao"> GitHub </a> &nbsp/&nbsp
-                <a href="https://twitter.com/RulinShao"> Twitter </a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/rulin-shao-966435191/"> LinkedIn </a> &nbsp/&nbsp
-                <a href="mailto:rulins@cs.washington.edu"> Email </a>
-              </p>
-            </td>
-            <td width="33%">
-              <img src="figures/selfie3.PNG" style="width: 100%;">
-            </td>
-          </tr>
-        </table>
 
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Rulin Shao</a>
+      <div class="nav-links">
+        <a href="#news">News</a>
+        <a href="#research">Research</a>
+        <a href="#awards">Awards</a>
+        <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+      </div>
+    </div>
+  </nav>
 
-        <!-- News -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="60%" valign="middle">
-              <heading>News</heading>
-              <ul>
-                <li> <b>2026-02</b> Gave an invited talk at Cornell!</li>
-                <li> <b>2026-02</b> OpenScholar is accepted by <a href="https://www.nature.com/articles/s41586-025-10072-4"> Nature</a>!</li>
-                <li> <b>2026-01</b> Gave an invited talk at AAAI FrontierIR Workshop on Retrieval for Reasoning! </li>
-                <li> <b>2026-01</b> Gave two invited talks at Amazon! </li>
-                <li> <b>2025-10</b> Introducing <a href="https://github.com/rlresearch/dr-tulu"> DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research </a>. Our 8B model matches OpenAI Deep Research thanks to our RLER algorithm! </li>
-                <li> <b>2025-10</b> Honored to receive the <a href="https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program?utm_campaign=ai-phd-fellowship&utm_medium=organic-asw&utm_source=twitter&utm_content=2025-10-21-ai-phd-fellowship&utm_term=2025-october"> Amazon AI PhD Fellowship </a>! </li>
-                <li> <b>2025-10</b> Gave an <a href="https://www.csail.mit.edu/event/rethinking-training-signals-rlvr"> invited talk at MIT NLP Seminar </a> </li>
-                <li> <b>2025-05</b> Introducing <a href="https://arxiv.org/abs/2506.10947"> Spurious Rewards: Rethinking Training Signals in RLVR </a>. We showed Qwen models can work even with random rewards! 🤯 </li>
-                <li> <b>2025-04</b> Introducing <a href="https://arxiv.org/abs/2504.20595"> ReasonIR </a>, a retriever specifically trained for reasoning tasks. Code, data, and model are released! </li>
-                <li> <b>2024-11</b> Check out our <a href="https://openscilm.allen.ai/"> OpenScholar </a>, an AI assistant proficient at answering research questions with accurate paper citations using online paper resources! Try out our <a href="https://openscilm.allen.ai/"> demo</a>! </li>
-                <li> <b>2024-07</b> Introducing <a href="https://retrievalscaling.github.io/"> MassiveDS-1.4T </a>, the first open-source trillion-token datastore and datastore scaling study! We release codes for distributed indexing and API serving make datastore scaling study accessible. [<a href="https://github.com/RulinShao/retrieval-scaling">code</a>]</li>
-                <li> <b>2023-10</b> Introducing <a href="https://arxiv.org/abs/2310.03294v2"> DistFlashAtten </a>, a distributed memory-efficient attention with sequence parallelism for Long-context LLMs training! </li>
-              </ul>
-            </td>
-          </tr>
-        </table>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Rulin Shao</h1>
+          <p class="tagline">// PhD Student · University of Washington</p>
+          <p class="bio">
+            I am a third-year PhD at University of Washington advised by Prof. <a href="https://koh.pw/">Pang Wei Koh</a> and Prof. <a href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a>.
+            I am also a visiting researcher at Meta working with <a href="https://scottyih.org/">Scott Yih</a> and <a href="https://scholar.google.co.uk/citations?user=SnQnQicAAAAJ&hl=en">Mike Lewis</a>.
+            I completed my master's in Machine Learning at CMU advised by Prof. <a href="http://www.cs.cmu.edu/~epxing/">Eric Xing</a> and my undergraduate degree in Mathematics at XJTU.
+            <br><br>
+            I'm interested in building an AI system that can automatically collect information from diverse sources, conduct deliberate practice, and decide how to spend time, compute, and storage to handle complex tasks.
+          </p>
+          <div class="social-links">
+            <a class="social-link" href="https://scholar.google.com/citations?user=Vdwh6bcAAAAJ&hl=en&oi=ao">
+              <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              Scholar
+            </a>
+            <a class="social-link" href="https://github.com/RulinShao">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a class="social-link" href="https://twitter.com/RulinShao">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/rulin-shao-966435191/">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a class="social-link" href="mailto:rulins@cs.washington.edu">
+              <svg viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908z"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="figures/selfie3.PNG" alt="Rulin Shao">
+        </div>
+      </div>
+    </section>
 
-        <!-- Researches -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>Research </heading>
-              <p>
-                
-          </tr>
-        </table>
+    <div class="divider"><hr></div>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <section id="news" class="section">
+      <h2 class="section-title"><span class="hash">//</span> News</h2>
+      <div class="news-fade">
+      <div class="news-list">
+        <div class="news-item"><span class="news-date">2026.02</span><span class="news-text">Gave an invited talk at Cornell!</span></div>
+        <div class="news-item"><span class="news-date">2026.02</span><span class="news-text">OpenScholar is accepted by <a href="https://www.nature.com/articles/s41586-025-10072-4">Nature</a>!</span></div>
+        <div class="news-item"><span class="news-date">2026.01</span><span class="news-text">Gave an invited talk at AAAI FrontierIR Workshop on Retrieval for Reasoning!</span></div>
+        <div class="news-item"><span class="news-date">2026.01</span><span class="news-text">Gave two invited talks at Amazon!</span></div>
+        <div class="news-item"><span class="news-date">2025.10</span><span class="news-text">Introducing <a href="https://github.com/rlresearch/dr-tulu">DR Tulu: RL with Evolving Rubrics for Deep Research</a>. Our 8B model matches OpenAI Deep Research!</span></div>
+        <div class="news-item"><span class="news-date">2025.10</span><span class="news-text">Honored to receive the <a href="https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program?utm_campaign=ai-phd-fellowship&utm_medium=organic-asw&utm_source=twitter&utm_content=2025-10-21-ai-phd-fellowship&utm_term=2025-october">Amazon AI PhD Fellowship</a>!</span></div>
+        <div class="news-item"><span class="news-date">2025.10</span><span class="news-text">Gave an <a href="https://www.csail.mit.edu/event/rethinking-training-signals-rlvr">invited talk at MIT NLP Seminar</a></span></div>
+        <div class="news-item"><span class="news-date">2025.05</span><span class="news-text">Introducing <a href="https://arxiv.org/abs/2506.10947">Spurious Rewards: Rethinking Training Signals in RLVR</a>. We showed Qwen models can work even with random rewards!</span></div>
+        <div class="news-item"><span class="news-date">2025.04</span><span class="news-text">Introducing <a href="https://arxiv.org/abs/2504.20595">ReasonIR</a>, a retriever specifically trained for reasoning tasks. Code, data, and model are released!</span></div>
+        <div class="news-item"><span class="news-date">2024.11</span><span class="news-text">Check out our <a href="https://openscilm.allen.ai/">OpenScholar</a>, an AI assistant proficient at answering research questions with accurate paper citations! Try the <a href="https://openscilm.allen.ai/">demo</a>!</span></div>
+        <div class="news-item"><span class="news-date">2024.07</span><span class="news-text">Introducing <a href="https://retrievalscaling.github.io/">MassiveDS-1.4T</a>, the first open-source trillion-token datastore and datastore scaling study! [<a href="https://github.com/RulinShao/retrieval-scaling">code</a>]</span></div>
+        <div class="news-item"><span class="news-date">2023.10</span><span class="news-text">Introducing <a href="https://arxiv.org/abs/2310.03294v2">DistFlashAtten</a>, a distributed memory-efficient attention with sequence parallelism for long-context LLMs training!</span></div>
+      </div>
+      </div>
+    </section>
 
-          <!-- Projects -->
-          <tr>
-            <td width="25%" id="drtulu-img"></td>
-            <td valign="top" width="75%" id="drtulu-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "drtulu", {
-              title: "DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research",
-              paper_url: "https://allenai.org/papers/drtulu",
-              authors: "<b>Rulin Shao*</b>, Akari Asai*, Shannon Zejiang Shen*, Hamish Ivison*, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, and Pang Wei Koh",
-              conference: "Preprint",
-              image: "figures/drtulu.png",
-              others: null
-            });
-          </script>
+    <div class="divider"><hr></div>
 
-          
-          <tr>
-            <td width="25%" id="spurious-img"></td>
-            <td valign="top" width="75%" id="spurious-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "spurious", {
-              title: "Spurious Rewards: Rethinking Training Signals in RLVR",
-              paper_url: "https://arxiv.org/pdf/2506.10947",
-              authors: "<b>Rulin Shao*</b>, Shuyue Stella Li*, Rui Xin*, Scott Geng*, Yiping Wang, Sewoong Oh, Simon Shaolei Du, Nathan Lambert, Sewon Min, Ranjay Krishna, Yulia Tsvetkov, Hannaneh Hajishirzi, Pang Wei Koh, Luke Zettlemoyer",
-              conference: "Preprint",
-              image: "figures/spurious.png",
-              others: null
-            });
-          </script>
+    <section id="research" class="section">
+      <h2 class="section-title"><span class="hash">//</span> Research</h2>
+      <div id="pub-list" class="pub-list"></div>
+    </section>
 
-          
-          <tr>
-            <td width="25%" id="reasonir-img"></td>
-            <td valign="top" width="75%" id="reasonir-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "reasonir", {
-              title: "ReasonIR: Training Retrievers for Reasoning Tasks",
-              paper_url: "https://arxiv.org/abs/2504.20595",
-              authors: "<b>Rulin Shao*</b>, Rui Qiao*, Varsha Kishore, Niklas Muennighoff, Xi Victoria Lin, Daniela Rus, Bryan Kian Hsiang Low, Sewon Min, Wen-tau Yih, Pang Wei Koh, Luke Zettlemoyer",
-              conference: "COLM 2025",
-              image: "figures/reasonir.png",
-              others: null
-            });
-          </script>
-          
-          <tr>
-            <td width="25%" id="openscholar-img"></td>
-            <td valign="top" width="75%" id="openscholar-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "openscholar", {
-              title: "Openscholar: Synthesizing scientific literature with retrieval-augmented lms",
-              paper_url: "https://www.nature.com/articles/s41586-025-10072-4",
-              authors: "Akari Asai, Jacqueline He*, <b>Rulin Shao*</b>, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'arcy, David Wadden, Matt Latzke, Minyang Tian, Pan Ji, Shengyan Liu, Hao Tong, Bohao Wu, Yanyu Xiong, Luke Zettlemoyer, Graham Neubig, Dan Weld, Doug Downey, Wen-tau Yih, Pang Wei Koh, Hannaneh Hajishirzi",
-              conference: "Nature",
-              image: "figures/openscholar.png",
-              others: null
-            });
-          </script>
-          
-          <tr>
-            <td width="25%" id="massiveds-img"></td>
-            <td valign="top" width="75%" id="massiveds-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "massiveds", {
-              title: "Scaling Retrieval-Based Language Models with a Trillion-Token Datastore",
-              paper_url: "https://arxiv.org/abs/2407.12854",
-              authors: "<b>Rulin Shao</b>, Jacqueline He, Akari Asai, Weijia Shi, Tim Dettmers, Sewon Min, Luke Zettlemoyer, Pang Wei Koh",
-              conference: "NeurIPS 2024",
-              image: "figures/massiveds.gif",
-              others: null
-            });
-          </script>
-          
-          <tr>
-            <td width="25%" id="dclm-img"></td>
-            <td valign="top" width="75%" id="dclm-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "dclm", {
-              title: "DataComp-LM: In search of the next generation of training sets for language models",
-              paper_url: "https://arxiv.org/abs/2403.08540",
-              authors: "Jeffrey Li, Alex Fang, Georgios Smyrnis, Maor Ivgi, Matt Jordan, Samir Gadre, Hritik Bansal, Etash Guha, Sedrick Keh, Kushal Arora, Saurabh Garg, Rui Xin, Niklas Muenninghoff, Reinhard Heckel, Jean Mercat, Mayee Chen, Suchin Gururangan, Mitchell Wortsman, Alon Albalak, Yonatan Bitton, Marianna Nezhurina, Amro Abbas, Cheng-Yu Hsieh, Dhruba Ghosh, Josh Gardner, Maciej Kilian, Hanlin Zhang, <b>Rulin Shao</b>, Sarah Pratt, Sunny Sanyal, Gabriel Ilharco, Giannis Daras, Kalyani Marathe, Aaron Gokaslan, Jieyu Zhang, Khyathi Chandu, Thao Nguyen, Igor Vasiljevic, Sham Kakade, Shuran Song, Sujay Sanghavi, Fartash Faghri, Sewoong Oh, Luke Zettlemoyer, Kyle Lo, Alaaeldin El-Nouby, Hadi Pouransari, Alexander Toshev, Stephanie Wang, Dirk Groeneveld, Luca Soldani, Pang Wei Koh, Jenia Jitsev, Thomas Kollar, Alexandros G Dimakis, Yair Carmon, Achal Dave, Ludwig Schmidt, Vaishaal Shankar",
-              conference: "NeurIPS 2024 Datasets and Benchmarks track",
-              image: "figures/dclm.png",
-              others: null
-            });
-          </script>
-          
-          <tr>
-            <td width="25%" id="lightseq-img"></td>
-            <td valign="top" width="75%" id="lightseq-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "lightseq", {
-              title: "LightSeq: Sequence Level Parallelism for Distributed Training of Long Context Transformers",
-              paper_url: "https://arxiv.org/abs/2310.03294v1",
-              authors: "Dacheng Li*, <b>Rulin Shao*</b>, Anze Xie, Eric P. Xing, Joseph E. Gonzalez, Ion Stoica, Xuezhe Ma, Hao Zhang",
-              conference: "COLM 2024",
-              image: "figures/lightseq.gif",
-              others: null
-            });
-          </script>
+    <div class="divider"><hr></div>
 
+    <section id="awards" class="section">
+      <h2 class="section-title"><span class="hash">//</span> Awards</h2>
+      <div id="awards-list" class="pub-list"></div>
+    </section>
+  </main>
 
-          <tr>
-            <td width="25%" id="longchat-img"></td>
-            <td valign="top" width="75%" id="longchat-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "longchat", {
-              title: "How Long Can Open-Source LLMs Truly Promise on Context Length?",
-              paper_url: "https://lmsys.org/blog/2023-06-29-longchat/",
-              authors: "Dacheng Li*, <b>Rulin Shao*</b>, Anze Xie, Ying Sheng, Lianmin Zheng, Joseph E. Gonzalez, Ion Stoica, Xuezhe Ma, and Hao Zhang",
-              conference: "Blog",
-              image: "figures/longchat.PNG",
-              others: null
-            });
-          </script>
+  <footer>
+    <p><a href="https://dachengli1.github.io/">My boyfriend asked me to put him here :). He is awesome!</a></p>
+  </footer>
 
-          
-          <tr>
-            <td width="25%" id="mpc_iclr23-img"></td>
-            <td valign="top" width="75%" id="mpc_iclr23-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "mpc_iclr23", {
-              title: "MPCFormer: fast, performant and private Transformer inference with MPC",
-              paper_url: "https://arxiv.org/abs/2211.01452",
-              authors: "Dacheng Li*, <b>Rulin Shao*</b>, Hongyi Wang*, Han Guo, Eric P Xing, Hao Zhang",
-              conference: "ICLR 2023 (Spotlight)",
-              image: "figures/iclr_23.PNG",
-              others: null
-            });
-          </script>
+  <!-- Pixel Umaru -->
+  <div id="kirby-wrap">
+    <div id="kirby-inner">
+      <div id="kirby-bubble">cola~</div>
+      <canvas id="kirby-canvas" width="16" height="16"></canvas>
+      <div id="kirby-shadow"></div>
+    </div>
+  </div>
 
-          <tr>
-            <td width="25%" id="vit_tmlr-img"></td>
-            <td valign="top" width="75%" id="vit_tmlr-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "vit_tmlr", {
-              title: "On the adversarial robustness of vision transformers",
-              paper_url: "https://arxiv.org/abs/2103.15670",
-              authors: "<b>Rulin Shao</b>, Zhouxing Shi, Jinfeng Yi, Pin-Yu Chen, Cho-Jui Hsieh",
-              conference: "Transactions on Machine Learning Research (TMLR)",
-              image: "figures/tmlr_23.PNG",
-              others: null
-            });
-          </script>
+  <script>
+    /* ===== Theme ===== */
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved) html.dataset.theme = saved;
+    function syncToggle() { toggle.textContent = html.dataset.theme === 'dark' ? '🌙' : '☀️'; }
+    syncToggle();
+    toggle.addEventListener('click', () => {
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', html.dataset.theme);
+      syncToggle();
+    });
 
-          
-          
-          <!-- Awards -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>Awards</heading>
-            </td>
-          </tr>
-        </table>
+    /* ===== Publications ===== */
+    const pubs = [
+      { t:"DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research", u:"https://allenai.org/papers/drtulu", a:"<strong>Rulin Shao*</strong>, Akari Asai*, Shannon Zejiang Shen*, Hamish Ivison*, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, and Pang Wei Koh", v:"Preprint", vc:"venue-preprint", img:"figures/drtulu.png" },
+      { t:"Spurious Rewards: Rethinking Training Signals in RLVR", u:"https://arxiv.org/pdf/2506.10947", a:"<strong>Rulin Shao*</strong>, Shuyue Stella Li*, Rui Xin*, Scott Geng*, Yiping Wang, Sewoong Oh, Simon Shaolei Du, Nathan Lambert, Sewon Min, Ranjay Krishna, Yulia Tsvetkov, Hannaneh Hajishirzi, Pang Wei Koh, Luke Zettlemoyer", v:"Preprint", vc:"venue-preprint", img:"figures/spurious.png" },
+      { t:"ReasonIR: Training Retrievers for Reasoning Tasks", u:"https://arxiv.org/abs/2504.20595", a:"<strong>Rulin Shao*</strong>, Rui Qiao*, Varsha Kishore, Niklas Muennighoff, Xi Victoria Lin, Daniela Rus, Bryan Kian Hsiang Low, Sewon Min, Wen-tau Yih, Pang Wei Koh, Luke Zettlemoyer", v:"COLM 2025", vc:"venue-colm", img:"figures/reasonir.png" },
+      { t:"OpenScholar: Synthesizing Scientific Literature with Retrieval-Augmented LMs", u:"https://www.nature.com/articles/s41586-025-10072-4", a:"Akari Asai, Jacqueline He*, <strong>Rulin Shao*</strong>, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'arcy, David Wadden, Matt Latzke, Minyang Tian, Pan Ji, Shengyan Liu, Hao Tong, Bohao Wu, Yanyu Xiong, Luke Zettlemoyer, Graham Neubig, Dan Weld, Doug Downey, Wen-tau Yih, Pang Wei Koh, Hannaneh Hajishirzi", v:"Nature", vc:"venue-nature", img:"figures/openscholar.png" },
+      { t:"Scaling Retrieval-Based Language Models with a Trillion-Token Datastore", u:"https://arxiv.org/abs/2407.12854", a:"<strong>Rulin Shao</strong>, Jacqueline He, Akari Asai, Weijia Shi, Tim Dettmers, Sewon Min, Luke Zettlemoyer, Pang Wei Koh", v:"NeurIPS 2024", vc:"venue-neurips", img:"figures/massiveds.gif" },
+      { t:"DataComp-LM: In Search of the Next Generation of Training Sets for Language Models", u:"https://arxiv.org/abs/2403.08540", a:"Jeffrey Li, Alex Fang, Georgios Smyrnis, Maor Ivgi, Matt Jordan, Samir Gadre, Hritik Bansal, Etash Guha, Sedrick Keh, Kushal Arora, Saurabh Garg, Rui Xin, Niklas Muenninghoff, Reinhard Heckel, Jean Mercat, Mayee Chen, Suchin Gururangan, Mitchell Wortsman, Alon Albalak, Yonatan Bitton, Marianna Nezhurina, Amro Abbas, Cheng-Yu Hsieh, Dhruba Ghosh, Josh Gardner, Maciej Kilian, Hanlin Zhang, <strong>Rulin Shao</strong>, Sarah Pratt, Sunny Sanyal, Gabriel Ilharco, Giannis Daras, Kalyani Marathe, Aaron Gokaslan, Jieyu Zhang, Khyathi Chandu, Thao Nguyen, Igor Vasiljevic, Sham Kakade, Shuran Song, Sujay Sanghavi, Fartash Faghri, Sewoong Oh, Luke Zettlemoyer, Kyle Lo, Alaaeldin El-Nouby, Hadi Pouransari, Alexander Toshev, Stephanie Wang, Dirk Groeneveld, Luca Soldani, Pang Wei Koh, Jenia Jitsev, Thomas Kollar, Alexandros G Dimakis, Yair Carmon, Achal Dave, Ludwig Schmidt, Vaishaal Shankar", v:"NeurIPS 2024 D&B", vc:"venue-neurips", img:"figures/dclm.png" },
+      { t:"LightSeq: Sequence Level Parallelism for Distributed Training of Long Context Transformers", u:"https://arxiv.org/abs/2310.03294v1", a:"Dacheng Li*, <strong>Rulin Shao*</strong>, Anze Xie, Eric P. Xing, Joseph E. Gonzalez, Ion Stoica, Xuezhe Ma, Hao Zhang", v:"COLM 2024", vc:"venue-colm", img:"figures/lightseq.gif" },
+      { t:"How Long Can Open-Source LLMs Truly Promise on Context Length?", u:"https://lmsys.org/blog/2023-06-29-longchat/", a:"Dacheng Li*, <strong>Rulin Shao*</strong>, Anze Xie, Ying Sheng, Lianmin Zheng, Joseph E. Gonzalez, Ion Stoica, Xuezhe Ma, and Hao Zhang", v:"Blog", vc:"venue-blog", img:"figures/longchat.PNG" },
+      { t:"MPCFormer: Fast, Performant and Private Transformer Inference with MPC", u:"https://arxiv.org/abs/2211.01452", a:"Dacheng Li*, <strong>Rulin Shao*</strong>, Hongyi Wang*, Han Guo, Eric P Xing, Hao Zhang", v:"ICLR 2023 (Spotlight)", vc:"venue-iclr", img:"figures/iclr_23.PNG" },
+      { t:"On the Adversarial Robustness of Vision Transformers", u:"https://arxiv.org/abs/2103.15670", a:"<strong>Rulin Shao</strong>, Zhouxing Shi, Jinfeng Yi, Pin-Yu Chen, Cho-Jui Hsieh", v:"TMLR", vc:"venue-tmlr", img:"figures/tmlr_23.PNG" },
+    ];
+    const awards = [
+      { t:"A Faster and More Accurate Secure Model Serving Framework on the Cloud", u:"awards/amazon_funding_secure_serving.pdf", a:"PI: Eric P. Xing", v:"Amazon Research Awards ($80,000)", vc:"venue-award", img:"figures/secure_inference_ara.PNG" },
+    ];
+    function render(list, id) {
+      const el = document.getElementById(id);
+      list.forEach(p => {
+        const d = document.createElement('div');
+        d.className = 'pub-card anim';
+        d.innerHTML = `<div class="pub-image"><img src="${p.img}" alt="${p.t}" loading="lazy"></div><div class="pub-info"><a href="${p.u}" class="pub-title" target="_blank" rel="noopener">${p.t}</a><p class="pub-authors">${p.a}</p><div class="pub-meta"><span class="venue-badge ${p.vc}">${p.v}</span></div></div>`;
+        el.appendChild(d);
+      });
+    }
+    render(pubs, 'pub-list');
+    render(awards, 'awards-list');
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          
-          <tr>
-            <td width="25%" id="secure_inference_ara-img"></td>
-            <td valign="top" width="75%" id="secure_inference_ara-txt"></td>
-          </tr>
-          <script type="text/javascript">
-            createProjectElement(
-              id = "secure_inference_ara", {
-              title: "A Faster and More Accurate Secure Model Serving Framework on the Cloud",
-              authors: "PI: Eric P. Xing",
-              paper_url: "awards/amazon_funding_secure_serving.pdf",
-              conference: "Amazon Research Awards ($80000)",
-              image: "figures/secure_inference_ara.PNG",
-              others: null
-            });
-          </script>
+    /* ===== Scroll anim ===== */
+    const obs = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.anim').forEach(e => obs.observe(e));
 
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tr>
-              <td>
-                <br>
-                <p align="right">
-                  <font size="2">
-                    <a href="https://dachengli1.github.io/">My boyfriend asked me to put him here :). He is awesome!</a>
-                  </font>
-                </p>
-              </td>
-            </tr>
-          </table>
-          <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-7580334-1");
-              pageTracker._trackPageview();
-            } catch (err) {}
-          </script>
-      </td>
-    </tr>
-  </table>
+    /* ===== Pixel Umaru ===== */
+    (function() {
+      const C = document.getElementById('kirby-canvas');
+      const ctx = C.getContext('2d');
+      const W = 16, H = 16, SCALE = 5;
+      C.style.width = (W * SCALE) + 'px';
+      C.style.height = (H * SCALE) + 'px';
+
+      const PAL = {
+        0: null,
+        1: '#ff7043',  // orange hood/body
+        2: '#e64a19',  // dark orange feet
+        3: '#ffdfc4',  // skin
+        4: '#2d1b0e',  // eyes
+        5: '#ffab91',  // blush
+        6: '#e57373',  // mouth
+      };
+
+      const FRAME_OPEN = [
+        0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,
+        0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,
+        0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,
+        1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+        0,1,1,1,3,3,3,3,3,3,3,3,1,1,1,0,
+        0,1,1,3,3,4,3,3,3,3,4,3,3,1,1,0,
+        0,1,1,3,5,3,3,3,3,3,3,5,3,1,1,0,
+        0,1,1,3,3,3,3,6,6,3,3,3,3,1,1,0,
+        0,1,1,1,3,3,3,3,3,3,3,3,1,1,1,0,
+        0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+        0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+        0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,
+        0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,
+        0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,
+        0,0,0,0,0,2,2,0,0,2,2,0,0,0,0,0,
+      ];
+
+      const FRAME_BLINK = FRAME_OPEN.slice();
+      const r6 = 6 * W;
+      FRAME_BLINK[r6+5] = 3; FRAME_BLINK[r6+10] = 3;
+      const r7 = 7 * W;
+      FRAME_BLINK[r7+4] = 4; FRAME_BLINK[r7+5] = 4;
+      FRAME_BLINK[r7+10] = 4; FRAME_BLINK[r7+11] = 4;
+
+      function drawFrame(data) {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] === 0) continue;
+          ctx.fillStyle = PAL[data[i]];
+          ctx.fillRect(i % W, Math.floor(i / W), 1, 1);
+        }
+      }
+
+      let blinking = false;
+      function tick() { drawFrame(blinking ? FRAME_BLINK : FRAME_OPEN); }
+
+      function scheduleBlink() {
+        setTimeout(() => {
+          blinking = true; tick();
+          setTimeout(() => { blinking = false; tick(); }, 120);
+          setTimeout(() => {
+            blinking = true; tick();
+            setTimeout(() => { blinking = false; tick(); scheduleBlink(); }, 120);
+          }, 200);
+        }, 2500 + Math.random() * 2500);
+      }
+
+      tick();
+      scheduleBlink();
+
+      // speech bubble
+      const bubbleEl = document.getElementById('kirby-bubble');
+      const phrases = ['cola~', 'zzZ...', '♪ ♫', 'game time!', '(╹ᗜ╹)', 'umaruun~', '✧'];
+      let pi = 0;
+      document.getElementById('kirby-wrap').addEventListener('click', () => {
+        pi = (pi + 1) % phrases.length;
+        bubbleEl.textContent = phrases[pi];
+        bubbleEl.classList.add('show');
+        setTimeout(() => bubbleEl.classList.remove('show'), 1800);
+      });
+    })();
+
+    /* ===== Analytics ===== */
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    try { var pageTracker = _gat._getTracker("UA-7580334-1"); pageTracker._trackPageview(); } catch (err) {}
+  </script>
 </body>
-
 </html>
