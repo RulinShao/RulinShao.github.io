@@ -486,6 +486,7 @@
       { t:"On the Adversarial Robustness of Vision Transformers", u:"https://arxiv.org/abs/2103.15670", a:"<strong>Rulin Shao</strong>, Zhouxing Shi, Jinfeng Yi, Pin-Yu Chen, Cho-Jui Hsieh", v:"TMLR", vc:"venue-tmlr", img:"figures/tmlr_23.PNG" },
     ];
     const awards = [
+      { t:"Amazon AI PhD Fellowship", u:"https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program", a:"<strong>Rulin Shao</strong>", v:"Amazon AI PhD Fellowship (2025)", vc:"venue-award", img:"" },
       { t:"A Faster and More Accurate Secure Model Serving Framework on the Cloud", u:"awards/amazon_funding_secure_serving.pdf", a:"PI: Eric P. Xing", v:"Amazon Research Awards ($80,000)", vc:"venue-award", img:"figures/secure_inference_ara.PNG" },
     ];
     function render(list, id) {
@@ -493,7 +494,7 @@
       list.forEach(p => {
         const d = document.createElement('div');
         d.className = 'pub-card anim';
-        d.innerHTML = `<div class="pub-image"><img src="${p.img}" alt="${p.t}" loading="lazy"></div><div class="pub-info"><a href="${p.u}" class="pub-title" target="_blank" rel="noopener">${p.t}</a><p class="pub-authors">${p.a}</p><div class="pub-meta"><span class="venue-badge ${p.vc}">${p.v}</span></div></div>`;
+        d.innerHTML = `${p.img ? `<div class="pub-image"><img src="${p.img}" alt="${p.t}" loading="lazy"></div>` : ''}<div class="pub-info"><a href="${p.u}" class="pub-title" target="_blank" rel="noopener">${p.t}</a><p class="pub-authors">${p.a}</p><div class="pub-meta"><span class="venue-badge ${p.vc}">${p.v}</span></div></div>`;
         el.appendChild(d);
       });
     }
