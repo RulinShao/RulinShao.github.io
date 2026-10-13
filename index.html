@@ -232,14 +232,12 @@
     }
     .pub-image {
       width: 170px; min-width: 170px; height: 110px;
-      border-radius: var(--radius-sm); overflow: hidden;
+      border-radius: var(--radius-sm);
       background: var(--bg); display: flex; align-items: center; justify-content: center;
     }
     .pub-image img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.4s ease;
+      width: 100%; height: 100%; object-fit: contain; display: block;
     }
-    .pub-card:hover .pub-image img { transform: scale(1.04); }
     .pub-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
     .pub-title {
       font-weight: 600; font-size: 15px; line-height: 1.5;
@@ -379,7 +377,7 @@
           <h1 class="name-heading">Rulin Shao <span class="cn-name">邵如琳</span></h1>
           <p class="tagline">// PhD Candidate · University of Washington</p>
           <p class="bio">
-            I am a PhD candidate at the University of Washington advised by Prof. <a href="https://koh.pw/">Pang Wei Koh</a> and Prof. <a href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a>.
+            I am a fourth-year PhD candidate at the University of Washington advised by Prof. <a href="https://koh.pw/">Pang&nbsp;Wei&nbsp;Koh</a> and Prof. <a href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a>.
             During my PhD, I have worked closely with <a href="https://scottyih.org/">Scott Yih</a> and <a href="https://scholar.google.co.uk/citations?user=SnQnQicAAAAJ&hl=en">Mike Lewis</a> at Meta.
             I completed my master's in Machine Learning at CMU advised by Prof. <a href="http://www.cs.cmu.edu/~epxing/">Eric Xing</a> and my undergraduate degree in Mathematics at XJTU.
             <br><br>
