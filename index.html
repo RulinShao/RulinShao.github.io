@@ -251,21 +251,21 @@
       display: inline-block; padding: 2px 10px; border-radius: 100px;
       font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.02em;
     }
-    .venue-nature   { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+    .venue-nature, .venue-icml { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
     .venue-neurips  { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
     .venue-iclr     { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
     .venue-colm     { background: #f0fdfa; color: #0d9488; border: 1px solid #99f6e4; }
     .venue-preprint { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
-    .venue-blog     { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+    .venue-blog     { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
     .venue-tmlr     { background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; }
     .venue-award    { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
 
-    [data-theme="dark"] .venue-nature   { background: rgba(5,150,105,0.1); color: #6ee7b7; border-color: rgba(5,150,105,0.25); }
+    [data-theme="dark"] .venue-nature, [data-theme="dark"] .venue-icml { background: rgba(217,119,6,0.1); color: #fcd34d; border-color: rgba(217,119,6,0.25); }
     [data-theme="dark"] .venue-neurips  { background: rgba(37,99,235,0.1); color: #93c5fd; border-color: rgba(37,99,235,0.25); }
     [data-theme="dark"] .venue-iclr     { background: rgba(124,58,237,0.1); color: #c4b5fd; border-color: rgba(124,58,237,0.25); }
     [data-theme="dark"] .venue-colm     { background: rgba(13,148,136,0.1); color: #5eead4; border-color: rgba(13,148,136,0.25); }
     [data-theme="dark"] .venue-preprint { background: rgba(100,116,139,0.1); color: #94a3b8; border-color: rgba(100,116,139,0.2); }
-    [data-theme="dark"] .venue-blog     { background: rgba(217,119,6,0.1); color: #fcd34d; border-color: rgba(217,119,6,0.25); }
+    [data-theme="dark"] .venue-blog     { background: rgba(5,150,105,0.1); color: #6ee7b7; border-color: rgba(5,150,105,0.25); }
     [data-theme="dark"] .venue-tmlr     { background: rgba(79,70,229,0.1); color: #a5b4fc; border-color: rgba(79,70,229,0.25); }
     [data-theme="dark"] .venue-award    { background: rgba(180,83,9,0.1); color: #fcd34d; border-color: rgba(180,83,9,0.25); }
 
@@ -483,10 +483,10 @@
     /* ===== Publications ===== */
     const pubs = [
       { t:"Context Language Models", u:"https://arxiv.org/abs/2609.37725", a:"<strong>Rulin Shao</strong>, Shannon Zejiang Shen, Junjie Oscar Yin, Yuetai Li, Minheng Wang, Hamish Ivison, Radha Poovendran, Nathan Lambert, Teng Xiao, Mike Lewis, Wen-tau Yih, Luke Zettlemoyer, Pang Wei Koh", v:"arXiv 2026", vc:"venue-preprint", img:"figures/clm_teaser.png" },
-      { t:"DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research", u:"https://allenai.org/papers/drtulu", a:"<strong>Rulin Shao*</strong>, Akari Asai*, Shannon Zejiang Shen*, Hamish Ivison*, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, and Pang Wei Koh", v:"ICML 2026 (Oral)", vc:"venue-preprint", img:"figures/drtulu.png" },
+      { t:"DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research", u:"https://allenai.org/papers/drtulu", a:"<strong>Rulin Shao*</strong>, Akari Asai*, Shannon Zejiang Shen*, Hamish Ivison*, Varsha Kishore, Jingming Zhuo, Xinran Zhao, Molly Park, Samuel Finlayson, David Sontag, Tyler Murray, Sewon Min, Pradeep Dasigi, Luca Soldaini, Faeze Brahman, Wen-tau Yih, Tongshuang Wu, Luke Zettlemoyer, Yoon Kim, Hannaneh Hajishirzi, and Pang Wei Koh", v:"ICML 2026 (Oral)", vc:"venue-icml", img:"figures/drtulu.png" },
       { t:"ReasonIR: Training Retrievers for Reasoning Tasks", u:"https://arxiv.org/abs/2504.20595", a:"<strong>Rulin Shao*</strong>, Rui Qiao*, Varsha Kishore, Niklas Muennighoff, Xi Victoria Lin, Daniela Rus, Bryan Kian Hsiang Low, Sewon Min, Wen-tau Yih, Pang Wei Koh, Luke Zettlemoyer", v:"COLM 2025", vc:"venue-colm", img:"figures/reasonir.png" },
       { t:"OpenScholar: Synthesizing Scientific Literature with Retrieval-Augmented LMs", u:"https://www.nature.com/articles/s41586-025-10072-4", a:"Akari Asai, Jacqueline He*, <strong>Rulin Shao*</strong>, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle Lo, Luca Soldaini, Sergey Feldman, Mike D'arcy, David Wadden, Matt Latzke, Minyang Tian, Pan Ji, Shengyan Liu, Hao Tong, Bohao Wu, Yanyu Xiong, Luke Zettlemoyer, Graham Neubig, Dan Weld, Doug Downey, Wen-tau Yih, Pang Wei Koh, Hannaneh Hajishirzi", v:"Nature", vc:"venue-nature", img:"figures/openscholar.png" },
-      { t:"Spurious Rewards: Rethinking Training Signals in RLVR", u:"https://arxiv.org/pdf/2506.10947", a:"<strong>Rulin Shao*</strong>, Shuyue Stella Li*, Rui Xin*, Scott Geng*, Yiping Wang, Sewoong Oh, Simon Shaolei Du, Nathan Lambert, Sewon Min, Ranjay Krishna, Yulia Tsvetkov, Hannaneh Hajishirzi, Pang Wei Koh, Luke Zettlemoyer", v:"ICML 2026", vc:"venue-preprint", img:"figures/spurious.png" },
+      { t:"Spurious Rewards: Rethinking Training Signals in RLVR", u:"https://arxiv.org/pdf/2506.10947", a:"<strong>Rulin Shao*</strong>, Shuyue Stella Li*, Rui Xin*, Scott Geng*, Yiping Wang, Sewoong Oh, Simon Shaolei Du, Nathan Lambert, Sewon Min, Ranjay Krishna, Yulia Tsvetkov, Hannaneh Hajishirzi, Pang Wei Koh, Luke Zettlemoyer", v:"ICML 2026", vc:"venue-icml", img:"figures/spurious.png" },
       { t:"Scaling Retrieval-Based Language Models with a Trillion-Token Datastore", u:"https://arxiv.org/abs/2407.12854", a:"<strong>Rulin Shao</strong>, Jacqueline He, Akari Asai, Weijia Shi, Tim Dettmers, Sewon Min, Luke Zettlemoyer, Pang Wei Koh", v:"NeurIPS 2024", vc:"venue-neurips", img:"figures/massiveds.gif" },
       { t:"DataComp-LM: In Search of the Next Generation of Training Sets for Language Models", u:"https://arxiv.org/abs/2403.08540", a:"Jeffrey Li, Alex Fang, Georgios Smyrnis, Maor Ivgi, Matt Jordan, Samir Gadre, Hritik Bansal, Etash Guha, Sedrick Keh, Kushal Arora, Saurabh Garg, Rui Xin, Niklas Muenninghoff, Reinhard Heckel, Jean Mercat, Mayee Chen, Suchin Gururangan, Mitchell Wortsman, Alon Albalak, Yonatan Bitton, Marianna Nezhurina, Amro Abbas, Cheng-Yu Hsieh, Dhruba Ghosh, Josh Gardner, Maciej Kilian, Hanlin Zhang, <strong>Rulin Shao</strong>, Sarah Pratt, Sunny Sanyal, Gabriel Ilharco, Giannis Daras, Kalyani Marathe, Aaron Gokaslan, Jieyu Zhang, Khyathi Chandu, Thao Nguyen, Igor Vasiljevic, Sham Kakade, Shuran Song, Sujay Sanghavi, Fartash Faghri, Sewoong Oh, Luke Zettlemoyer, Kyle Lo, Alaaeldin El-Nouby, Hadi Pouransari, Alexander Toshev, Stephanie Wang, Dirk Groeneveld, Luca Soldani, Pang Wei Koh, Jenia Jitsev, Thomas Kollar, Alexandros G Dimakis, Yair Carmon, Achal Dave, Ludwig Schmidt, Vaishaal Shankar", v:"NeurIPS 2024 D&B", vc:"venue-neurips", img:"figures/dclm.png" },
       { t:"LightSeq: Sequence Level Parallelism for Distributed Training of Long Context Transformers", u:"https://arxiv.org/abs/2310.03294v1", a:"Dacheng Li*, <strong>Rulin Shao*</strong>, Anze Xie, Eric P. Xing, Joseph E. Gonzalez, Ion Stoica, Xuezhe Ma, Hao Zhang", v:"COLM 2024", vc:"venue-colm", img:"figures/lightseq.gif" },
